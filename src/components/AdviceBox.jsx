@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import divider from "../assets/pattern-divider-desktop.svg";
 import dice from "../assets/icon-dice.svg";
 import { getQuote } from "../service/api";
+import { Toaster, toast } from "sonner";
 
 const AdviceBox = () => {
   const [slip, setSlip] = useState({});
@@ -11,11 +12,11 @@ const AdviceBox = () => {
       const response = await getQuote();
       setSlip(response?.data?.slip);
     } catch (error) {
-      console.error("Error fetching quote:", error);
+      toast.error("Something went wrong", { position: "top-center" });
     }
   };
   useEffect(() => {
-    fetchQuote(); 
+    fetchQuote();
   }, []);
 
   return (
