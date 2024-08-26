@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import divider from "../assets/pattern-divider-desktop.svg";
 import dice from "../assets/icon-dice.svg";
-import { getQuote } from "../service/Api";
+import { getQuote } from "../service/api";
 
 const AdviceBox = () => {
   const [slip, setSlip] = useState({});
