@@ -8,15 +8,14 @@ const AdviceBox = () => {
 
   const fetchQuote = async () => {
     try {
-      const response = await getQuote(); // Wait for the promise to resolve
+      const response = await getQuote();
       setSlip(response?.data?.slip);
-      console.log("Response:", response?.data?.slip); // Log the slip
     } catch (error) {
       console.error("Error fetching quote:", error);
     }
   };
   useEffect(() => {
-    fetchQuote(); // Call the async function
+    fetchQuote(); 
   }, []);
 
   return (
